@@ -13,31 +13,59 @@ let numbers = [
 ];
 
 // Todo 3.1 Get the first, 5th, and last items in the numbers array.
-// Your code here
+console.log(numbers[0], numbers[4], numbers[numbers.length - 1])
 
 // Todo 3.2 calculate the min, max, and the average of the numbers array
-// Your code here
+let minimum = Math.min(...numbers)
+let maximum = Math.max(...numbers)
+let average = numbers.reduce((acc, num) => acc + num, 0) / numbers.length
+console.log("min", minimum)
+console.log("max", maximum)
+console.log("Average", average)
 
 // Checkpoint 3.1 How would you compare lists in python vs arrays in JavaScript
 // Answer: 
 
 // Todo 3.3 Declare an object with information about IT114L (course code, name, units, number of students)
-// Your code here
-
+const courseinfo = {
+    CourseCode: "IT114L",
+    CourseName: "Web Systems and Technology",
+    units: "3",
+    NumOfStuds: "40"
+}
 // Todo 3.4 Add professor name as one of the fields of the object. Display the value of professor name.
-// Your code here
+courseinfo.ProfName = "Job Lipat"
+console.log(courseinfo.ProfName)
 
 // Todo 3.5 Declare and array of objects with information about the courses you are taking this term
-// Your code here
+const coursearray = [
+    {
+        CourseCode: "PE044",
+        CourseName: "Physical Activities Towards Health and Fitness",
+        units: 1,
+        NumOfStuds: "30",
+        ProfName: 'Ferdinand Fermin'
+    },
+    {
+        CourseCode: "CS120",
+        CourseName: "Structure of Programming Languages",
+        units: 3,
+        NumOfStuds: "40",
+        ProfName: 'Aurelia Sharlene Delos Santos'
+    }
+    ]
 
 // Todo 3.5 Calculate the total number of units you are taking this term using the array of objects.
-// Your code here
+const total = coursearray.reduce((total, coursearray) => total + coursearray.units, 0)
+console.log(total)
 
 // Checkpoint 3.2 What would be the equivalent of objects in python? How would you compare them?
 // Answer: 
 
 // Todo 3.6 Going back to the array of numbers, use the spread syntax to create a copy of the array with an additional number
-// Your code here
+let num = [...numbers, 100]
+console.log(num)
 
 // Todo 3.7 Going back to your IT114L object, extract the course code and units using the spread operator
-// Your code here
+let {CourseCode, units} = {...courseinfo}
+console.log(CourseCode, units)
